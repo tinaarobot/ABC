@@ -19,6 +19,6 @@
 <p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/tinaarobot/ABC"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-008080?style=for-the-badge&logo=heroku" width="180" height="40"/></a></p>
 
 
- <img src="https://readme-typing-svg.herokuapp.com?color=FFFFFF&width=420&lines=🐉+🄹🄾🄸🄽+🄾🅄🅁+🅂🅄🄿🄿🄾🅁🅃+🄶🅁🄾🅄🄿+🐉">
+ <img src="https://readme-typing-svg.herokuapp.com?color=FFFF00&width=420&lines=🐉+🄹🄾🄸🄽+🄾🅄🅁+🅂🅄🄿🄿🄾🅁🅃+🄶🅁🄾🅄🄿+🐉">
 
-<p align="center"><a href="https://telegram.com/new?template=https://t.me/the_friendz"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-008080?style=for-the-badge&logo=telegram" width="180" height="40"/></a></p>
+
