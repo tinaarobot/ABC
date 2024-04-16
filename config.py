@@ -6,38 +6,52 @@ from pyrogram import filters
 
 load_dotenv()
 
-# Get this value from my.telegram.org/apps
+#❖ Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 
-# Get your token from @BotFather on Telegram.
+#❖ Add Owner Username without @ 
+OWNER_USERNAME = getenv("OWNER_USERNAME", "roy_editx")
+
+#❖  Get Your bot username
+BOT_USERNAME = getenv("BOT_USERNAME", "NykaaxBot")
+
+#❖  Don't Add style font 
+BOT_NAME = getenv("BOT_NAME", "NYKAA MUSIC")
+
+#❖ get Your Assistant User name
+ASSUSERNAME = getenv("ASSUSERNAME", "NYKAA_ASS")
+
+#❖ Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
 
-# Get your mongo url from cloud.mongodb.com
+#❖ Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600000))
 
-# Chat id of a group for logging bot's activities
+#❖  Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", None))
 
-# Get this value from @FallenxBot on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 1356469075))
+#❖ Get this value from @FallenxBot on Telegram by /id
+OWNER_ID = int(getenv("OWNER_ID", None))
 
-## Fill these variables if you're deploying on heroku.
-# Your heroku app name
+#❖  Your heroku app name
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
-# Get it from http://dashboard.heroku.com/account
+
+#❖  Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/tinaarobot/ABC",
 )
+
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
+
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
-)  # Fill this variable if your upstream repository is private
+)  #❖ Fill this variable if your upstream repository is private
 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/roy_editx")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/the_friendz")
