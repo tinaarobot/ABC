@@ -10,7 +10,7 @@
   <img src="https://graph.org/file/ae479d362c7b3d8e2396c.jpg">
 </p>
 
- <img src="https://readme-typing-svg.herokuapp.com?color=FF00FF&width=420&lines=💌+Ⓓⓔⓟⓛⓞⓨ+ⓞⓝ+Ⓗⓔⓡⓞⓚⓤ+Ⓝⓞⓦ+💌">
+ <img src="https://readme-typing-svg.herokuapp.com?color=FF00FF&width=420&lines=🐙+🄳🄴🄿🄻🄾🅈+🄾🄽+🄷🄴🅁🄾🄺🅄+🄽🄾🅆+🐙">
 
 
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
