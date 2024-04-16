@@ -13,7 +13,6 @@
  <img src="https://readme-typing-svg.herokuapp.com?color=FF00FF&width=420&lines=💌+Ⓓⓔⓟⓛⓞⓨ+ⓞⓝ+Ⓗⓔⓡⓞⓚⓤ+Ⓝⓞⓦ+💌">
 
 
-<h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
