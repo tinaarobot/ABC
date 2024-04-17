@@ -28,14 +28,14 @@ async def chat_gpt(bot, message):
                     end_time = time.time()
                     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
                     await message.reply_text(
-                         f"♥︎ {x}  \n\n❖ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➥  ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐",
+                         f"🌹 {x}  \n\n❖ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➥  ๛ᴀ ᴠ ɪ s ʜ s ࿐",
                         parse_mode=ParseMode.MARKDOWN
                     )
                 else:
-                    await message.reply_text("No 'results' key found in the response.")
+                    await message.reply_text("❖ No 'results' key found in the response.")
             except KeyError:
                 # Handle any other KeyError that might occur
-                await message.reply_text("Error accessing the response.")
+                await message.reply_text("❖ Error accessing the response.")
     except Exception as e:
-        await message.reply_text(f"**á´‡Ê€Ê€á´Ê€: {e} ")
+        await message.reply_text(f"❖ ᴇʀʀᴏʀ ➥ {e} ")
       
