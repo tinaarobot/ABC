@@ -84,6 +84,6 @@ async def authusers(client, message: Message, _):
                 j += 1
             except:
                 continue
-            text += f"{j}➤ {user}[<code>{user_id}</code>]\n"
-            text += f"   {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
+            text += f"❖ {j} ➥ {user}[<code>{user_id}</code>]\n"
+            text += f"❖  {_['auth_8']} {admin_name}[<code>{admin_id}</code>]\n\n"
         await mystic.edit_text(text, reply_markup=close_markup(_))
