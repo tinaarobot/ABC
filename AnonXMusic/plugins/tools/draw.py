@@ -6,13 +6,10 @@ import asyncio
 from AnonXMusic import app
 
 
-
 api = ApiClient()
 Models = api.getModels()['models']['image']
 
 Database = {}
-
-
 
 
 async def ImageGeneration(model,prompt):
@@ -40,13 +37,13 @@ async def ImageGeneration(model,prompt):
             continue
         return image_url
     except Exception as e:
-        raise Exception(f"ғᴀɪʟᴇᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴛʜᴇ ɪᴍᴀɢᴇ: {e}")
+        raise Exception(f"❖ ғᴀɪʟᴇᴅ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴛʜᴇ ɪᴍᴀɢᴇ ➥ {e}")
     finally:
         await client.close()
       
 
 def getText(message):
-    """Extract Text From Commands"""
+    """❖ Extract Text From Commands"""
     text_to_return = message.text
     if message.text is None:
         return None
@@ -108,41 +105,38 @@ def paginate_models(page_n: int, models: list,user_id) -> list:
         ] + [
             (
                 EqInlineKeyboardButton(
-                    "◁",
+                    "◁◁",
                     callback_data=f"d.left.{modulo_page}.{user_id}"
                 ),
                 EqInlineKeyboardButton(
-                    "⌯ ᴄᴀɴᴄᴇʟ ⌯",
+                    "ᴄᴀɴᴄᴇʟ",
                     callback_data=f"close_data"
                 ),
                 EqInlineKeyboardButton(
-                    "▷",
+                    "▷▷",
                     callback_data=f"d.right.{modulo_page}.{user_id}"
                 ),
             )
         ]
     else:
-        pairs += [[EqInlineKeyboardButton("⌯ ʙᴀᴄᴋ ⌯", callback_data=f"d.-1.{user_id}")]]
+        pairs += [[EqInlineKeyboardButton("ʙᴀᴄᴋ", callback_data=f"d.-1.{user_id}")]]
 
     return pairs
 
 
-                     
-
-
-
+                   
 @app.on_message(filters.command(["draw","create","imagine","dream"]))
 async def draw(_: app, m: t.Message):
     global Database
     prompt = getText(m)
     if prompt is None:
-        return await m.reply_text("<code>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴘʀᴏᴍᴘᴛ. ᴜsᴀɢᴇ: /draw <prompt></code>")
+        return await m.reply_text("❖ <code>ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴘʀᴏᴍᴘᴛ. ᴜsᴀɢᴇ ➥ /draw <prompt></code>")
     user = m.from_user
     data = {'prompt':prompt,'reply_to_id':m.id}
     Database[user.id] = data
     btns = paginate_models(0,Models,user.id)
     await m.reply_text(
-            text=f"**ʜᴇʟʟᴏ {m.from_user.mention}**\n\n**sᴇʟᴇᴄᴛ ʏᴏᴜʀ ɪᴍᴀɢᴇ ɢᴇɴᴇʀᴀᴛᴏʀ ᴍᴏᴅᴇʟ**",
+            text=f"❖ ʜᴇʟʟᴏ {m.from_user.mention}, sᴇʟᴇᴄᴛ ʏᴏᴜʀ ɪᴍᴀɢᴇ ɢᴇɴᴇʀᴀᴛᴏʀ ᴍᴏᴅᴇʟ.",
             reply_markup=t.InlineKeyboardMarkup(btns)
             )
 
@@ -170,20 +164,20 @@ async def selectModel(_:app,query:t.CallbackQuery):
             )
         return
     modelId = int(data[1])
-    await query.edit_message_text("**ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ, ɢᴇɴᴇʀᴀᴛɪɴɢ ʏᴏᴜʀ ɪᴍᴀɢᴇ.**")
+    await query.edit_message_text("🐾")
     promptData = Database.get(auth_user,None)
     if promptData is None:
-        return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!.")
+        return await query.edit_message_text("❖ sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ.")
     img_url = await ImageGeneration(modelId,promptData['prompt'])
     if img_url is None or img_url == 2 or img_url ==1:
-        return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!")
+        return await query.edit_message_text("❖ sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ.")
     elif img_url == 69:
-        return await query.edit_message_text("ɴsғᴡ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ !")
+        return await query.edit_message_text("❖ ɴsғᴡ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ.")
     images = []
     modelName = [i['name'] for i in Models if i['id'] == modelId]
     for i in img_url:
         images.append(t.InputMediaPhoto(i))
-    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"๏ ʏᴏᴜʀ ᴘʀᴏᴍᴘᴛ ➛ `{promptData['prompt']}`")
+    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"❖ ʏᴏᴜʀ ᴘʀᴏᴍᴘᴛ ➥ `{promptData['prompt']}`")
     await query.message.delete()
     try:
         del Database[auth_user]
