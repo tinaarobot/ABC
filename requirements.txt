@@ -25,4 +25,4 @@ youtube-search
 youtube-search-python
 pornhub-api==0.3.0
 openai==1.17.1
-lexica-api==1.5.0
+lexica-api==1.5.7
