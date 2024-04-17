@@ -46,7 +46,7 @@ def crop_center_circle(img, output_size, border, crop_scale=1.5):
     img = img.resize((output_size - 2*border, output_size - 2*border))
     
     
-    final_img = Image.new("RGBA", (output_size, output_size), "pink")
+    final_img = Image.new("RGBA", (output_size, output_size), "green")
     
     
     mask_main = Image.new("L", (output_size - 2*border, output_size - 2*border), 0)
