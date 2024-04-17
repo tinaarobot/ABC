@@ -167,7 +167,7 @@ async def del_back_playlist(client, CallbackQuery, _):
                     await auto_clean(popped)
                 if not check:
                     await CallbackQuery.edit_message_text(
-                        f"❖ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ\n│ \n└ʙʏ ➥ {mention} 🥀"
+                        f"❖ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ\n│ \n└ʙʏ ➥ {mention}"
                     )
                     await CallbackQuery.message.reply_text(
                         text=_["admin_6"].format(
