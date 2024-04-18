@@ -4,6 +4,9 @@
  <img src="https://readme-typing-svg.herokuapp.com?color=00FF00&width=420&lines=🦑+🅂🄸🄼🄿🄻🄴+🄼🅄🅂🄸🄲+🄱🄾🅃+🅁🄴🄿🄾+🦑">
 
 
+    ─「 ᴍᴜsɪᴄ ʙᴏᴛ ғᴏʀ ᴍᴀɴᴀɢᴍᴇɴᴛ ʙᴏᴛ 」─
+</h3>
+
 
 </h2>
 <p align="center">
