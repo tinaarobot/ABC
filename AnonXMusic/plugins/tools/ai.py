@@ -7,7 +7,7 @@ from config import BOT_USERNAME
 from pyrogram.enums import ChatAction, ParseMode
 from pyrogram import filters
 
-@app.on_message(filters.command(["chatgpt","ai","ask","gpt","solve"],  prefixes=["+", ".", "/", "-", "", "$","#","&"]))
+@app.on_message(filters.command(["solve"],  prefixes=["+", ".", "/", "-", "", "$","#","&"]))
 async def chat_gpt(bot, message):
     try:
         start_time = time.time()
@@ -15,7 +15,7 @@ async def chat_gpt(bot, message):
 
         if len(message.command) < 2:
             await message.reply_text(
-                "❖ ᴇxᴀᴍᴘʟᴇ ➥ /ask Where is TajMahal ?"
+                "❖ ᴇxᴀᴍᴘʟᴇ ➥ /ask equation of motion ?"
             )
         else:
             a = message.text.split(' ', 1)[1]
@@ -28,7 +28,7 @@ async def chat_gpt(bot, message):
                     end_time = time.time()
                     telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
                     await message.reply_text(
-                         f"❖ {x}  \n\n❖ ᴀɴsᴡᴇʀɪɴɢ ʙʏ ➥  ๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐",
+                         f"❐ {x}  \n\n❖ sᴏʟᴠɪɴɢ ʙʏ ➥  ๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐",
                         parse_mode=ParseMode.MARKDOWN
                     )
                 else:
