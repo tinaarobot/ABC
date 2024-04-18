@@ -46,7 +46,7 @@ def crop_center_circle(img, output_size, border, crop_scale=1.5):
     img = img.resize((output_size - 2*border, output_size - 2*border))
     
     
-    final_img = Image.new("RGBA", (output_size, output_size), "green")
+    final_img = Image.new("RGBA", (output_size, output_size), "yellow")
     
     
     mask_main = Image.new("L", (output_size - 2*border, output_size - 2*border), 0)
@@ -123,7 +123,7 @@ async def get_thumb(videoid):
     draw.text((text_x_position, 180), title1[0], fill=(255, 255, 255), font=title_font)
     draw.text((text_x_position, 230), title1[1], fill=(255, 255, 255), font=title_font)
     draw.text((text_x_position, 320), f"{channel}  |  {views[:23]}", (255, 255, 255), font=arial)
-    draw.text((10, 10), f"AVISHA MUSIC", fill="yellow", font=font)
+    draw.text((10, 10), f"AVISHA MUSIC", fill="white", font=font)
 
     
     line_length = 580  
