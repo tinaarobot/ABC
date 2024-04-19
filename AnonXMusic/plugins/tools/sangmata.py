@@ -8,15 +8,16 @@ from pyrogram.raw.functions.messages import DeleteHistory
 from AnonXMusic import userbot as us, app
 from AnonXMusic.core.userbot import assistants
 
+
 @app.on_message(filters.command("sg"))
 async def sg(client: Client, message: Message):
     if len(message.text.split()) < 1 and not message.reply_to_message:
-        return await message.reply("❖ sg username/id/reply")
+        return await message.reply("sg username/id/reply")
     if message.reply_to_message:
         args = message.reply_to_message.from_user.id
     else:
         args = message.text.split()[1]
-    lol = await message.reply("🦑")
+    lol = await message.reply("🧨")
     if args:
         try:
             user = await client.get_users(f"{args}")
@@ -28,7 +29,7 @@ async def sg(client: Client, message: Message):
         ubot = us.one
     
     try:
-        a = await ubot.send_message(sg, f"➥ {user.id}")
+        a = await ubot.send_message(sg, f"{user.id}")
         await a.delete()
     except Exception as e:
         return await lol.edit(e)
@@ -40,7 +41,7 @@ async def sg(client: Client, message: Message):
         if not stalk:
             await message.reply("botnya ngambek")
         elif stalk:
-            await message.reply(f"❖ {stalk.text}")
+            await message.reply(f"{stalk.text}")
             break  # Exit the loop after displaying one message
     
     try:
