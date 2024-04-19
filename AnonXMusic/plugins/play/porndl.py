@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from AnonXMusic import app
 import pytgcalls
 import os, yt_dlp 
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import CallbackQuery, Message InlineKeyboardButton, InlineKeyboardMarkup
 from pytgcalls.types import AudioVideoPiped
 #from AnonXMusic.plugins.play import play
 #from AnonXMusic.plugins.play.porndl import play
@@ -70,7 +70,10 @@ def get_video_info(title):
 
 @app.on_message(filters.command("porn"))
 async def get_random_video_info(client, message):
-  #  if len(message.command) == 1:
+  if len(message.command) == 1:
+        await message.reply("❖ Please provide a title to search.")
+        return
+        
              if message.chat.type != ChatType.PRIVATE:
         return await message.reply_text("**❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ᴜsᴀʙʟᴇ ɪɴ ᴘᴍ ғᴏʀ ɢʀᴏᴜᴘ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ.**",
          reply_markup=InlineKeyboardMarkup(
@@ -79,8 +82,8 @@ async def get_random_video_info(client, message):
             ]
         ))
 
-        await message.reply("❖ Please provide a title to search.")
-        return
+       # await message.reply("❖ Please provide a title to search.")
+        #return
 
     title = ' '.join(message.command[1:])
     video_info = get_video_info(title)
