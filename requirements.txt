@@ -10,7 +10,7 @@ heroku3
 motor==3.0.0
 pillow==9.5.0
 psutil
-py-tgcalls==0.9.7
+py-tgcalls==2.0.1
 pykeyboard
 pyrogram==2.0.106
 python-dotenv
@@ -20,7 +20,7 @@ speedtest-cli
 spotipy
 tgcrypto
 unidecode
-yt-dlp==2023.10.13
+yt-dlp
 youtube-search
 youtube-search-python
 pornhub-api==0.3.0
