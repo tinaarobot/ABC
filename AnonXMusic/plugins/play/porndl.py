@@ -70,7 +70,15 @@ def get_video_info(title):
 
 @app.on_message(filters.command("porn"))
 async def get_random_video_info(client, message):
-    if len(message.command) == 1:
+  #  if len(message.command) == 1:
+             if message.chat.type != ChatType.PRIVATE:
+        return await message.reply_text("**❍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ᴏɴʟʏ ᴜsᴀʙʟᴇ ɪɴ ᴘᴍ ғᴏʀ ɢʀᴏᴜᴘ ᴘʀᴏᴛᴇᴄᴛɪᴏɴ.**",
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [InlineKeyboardButton("ɢᴏ ᴘᴍ", url=f"https://t.me/{app.me.username}?start=True")]
+            ]
+        ))
+
         await message.reply("❖ Please provide a title to search.")
         return
 
