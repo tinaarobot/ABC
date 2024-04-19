@@ -17,17 +17,7 @@ keyboard = InlineKeyboardMarkup([
         ]
 ])
 
-        
-##########
 
-@app.on_callback_query(filters.regex("^close_data"))
-async def close_callback(_, query):
-    chat_id = query.message.chat.id
-    await query.message.delete()
-
-
-        
-#####
 # Define your callback function
 @app.on_callback_query(filters.regex("^play"))
 async def play_callback(_, query):
@@ -35,7 +25,7 @@ async def play_callback(_, query):
     await play(query.from_user.id)  # Assuming play function accepts user ID
     await query.answer("Playback started!")
         
-##########
+#######
 
 @app.on_callback_query(filters.regex("^close_data"))
 async def close_callback(_, query):
@@ -61,7 +51,7 @@ async def get_video_stream(link):
     x.download([link])
     return video
 
-######
+#####
 
 def get_video_info(title):
     url_base = f'https://www.xnxx.com/search/{title}'
@@ -97,12 +87,7 @@ async def get_random_video_info(client, message):
     if video_info:
         video_link = video_info['link']
         video = await get_video_stream(video_link)
-        await message.reply_video(video, caption=f"❖ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ➥{title}", reply_markup=keyboard)
+        await message.reply_video(video, caption=f"❖ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ➥ `{title}` ", reply_markup=keyboard)
              
     else:
-        await message.reply(f"❖ No video link found for ➥ '{title}'.")
-
-######
-
-
-
+        await message.reply(f"✦ No video link found for ➥ '{title}'.")
