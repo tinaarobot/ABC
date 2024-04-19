@@ -6,21 +6,20 @@ import pytgcalls
 import os, yt_dlp 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pytgcalls.types import AudioVideoPiped
-from AnonXMusic.plugins.play import play
-from AnonXMusic.plugins.play.pornplay import play
+#from AnonXMusic.plugins.play import play
+#from AnonXMusic.plugins.play.porndl import play
 
 keyboard = InlineKeyboardMarkup([
         [
             InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data"), 
-            InlineKeyboardButton("ᴠᴘʟᴀʏ", callback_data="play"),
         ]
 ])
 
-@app.on_callback_query(filters.regex("^play"))
-async def play_callback(_, query):
+#@app.on_callback_query(filters.regex("^play"))
+#async def play_callback(_, query):
     # You can add more logic here before initiating playback
-    await play(query.from_user.id)  # Assuming play function accepts user ID
-    await query.answer("Playback started!")
+   # await play(query.from_user.id)  # Assuming play function accepts user ID
+  #  await query.answer("Playback started!")
         
 
 @app.on_callback_query(filters.regex("^close_data"))
@@ -28,24 +27,24 @@ async def close_callback(_, query):
     chat_id = query.message.chat.id
     await query.message.delete()
 
-async def get_video_stream(link):
-    ydl_opts = {
-        "format": "bestvideo+bestaudio/best",
-        "outtmpl": "downloads/%(id)s.%(ext)s",
-        "geo_bypass": True,
-        "nocheckcertificate": True,
-        "quiet": True,
-        "no_warnings": True,
-    }
-    x = yt_dlp.YoutubeDL(ydl_opts)
-    info = x.extract_info(link, False)
-    video = os.path.join(
-        "downloads", f"{info['id']}.{info['ext']}"
+#async def get_video_stream(link):
+   # ydl_opts = {
+     #   "format": "bestvideo+bestaudio/best",
+      #  "outtmpl": "downloads/%(id)s.%(ext)s",
+      #  "geo_bypass": True,
+     #   "nocheckcertificate": True,
+       # "quiet": True,
+      #  "no_warnings": True,
+#    }
+ #   x = yt_dlp.YoutubeDL(ydl_opts)
+ #   info = x.extract_info(link, False)
+  #  video = os.path.join(
+  #      "downloads", f"{info['id']}.{info['ext']}"
     )
-    if os.path.exists(video):
-        return video
-    x.download([link])
-    return video
+   # if os.path.exists(video):
+     #   return video
+   # x.download([link])
+   # return video
         
 
 def get_video_info(title):
@@ -81,34 +80,34 @@ async def get_random_video_info(client, message):
     if video_info:
         video_link = video_info['link']
         video = await get_video_stream(video_link)
-        await message.reply_video(video, caption=f"❖ {title}", reply_markup=keyboard)
+        await message.reply_video(video, caption=f"❖ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇᴀʀᴄʜ ➥ {title}", reply_markup=keyboard)
              
     else:
         await message.reply(f"❖ No video link found for ➥ {title}")
 
 
-@app.on_message(filters.command("xnxx"))
-async def get_random_video_info(client, message):
-    if len(message.command) == 1:
-        await message.reply("❖ Please provide a title to search.")
-        return
+#@app.on_message(filters.command("xnxx"))
+#async def get_random_video_info(client, message):
+#    if len(message.command) == 1:
+      #  await message.reply("❖ Please provide a title to search.")
+     #   return
 
-    title = ' '.join(message.command[1:])
-    video_info = get_video_info(title)
+ #   title = ' '.join(message.command[1:])
+  #  video_info = get_video_info(title)
     
-    if video_info:
-        video_link = video_info['link']
-        video = await get_video_stream(video_link)
+ #   if video_info:
+  #      video_link = video_info['link']
+     #   video = await get_video_stream(video_link)
         
         # Additional information
-        views = get_views_from_api(video_link)  # Replace with actual API call or logic to get views
-        ratings = get_ratings_from_api(video_link)  # Replace with actual API call or logic to get ratings
+      #  views = get_views_from_api(video_link)  # Replace with actual API call or logic to get views
+     #   ratings = get_ratings_from_api(video_link)  # Replace with actual API call or logic to get ratings
 
-        await message.reply_video(
-            video,
-            caption=f"❖ Add Title ➥ {title}\n\n● Views ➥ {views}\n● Ratings ➥ {ratings}",
-            reply_markup=keyboard
-        )
-    else:
-        await message.reply(f"❖ No video link found for ➥ {title}")
+     #   await message.reply_video(
+     #       video,
+        #    caption=f"❖ Add Title ➥ {title}\n\n● Views ➥ {views}\n● Ratings ➥ {ratings}",
+        #    reply_markup=keyboard
+  #      )
+ #   else:
+  #      await message.reply(f"❖ No video link found for ➥ {title}")
 
