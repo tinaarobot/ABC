@@ -87,7 +87,7 @@ async def get_random_video_info(client, message):
     if video_info:
         video_link = video_info['link']
         video = await get_video_stream(video_link)
-        await message.reply_video(video, caption=f"❖ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ➥ `{title}` ", reply_markup=keyboard)
+        await message.reply_video(video, caption=f"❖ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇᴀʀᴄʜ ᴠɪᴅᴇᴏ ➥ {title}", reply_markup=keyboard)
              
     else:
-        await message.reply(f"✦ No video link found for ➥ '{title}'.")
+        await message.reply(f"✦ No video link found for ➥ {title}")
