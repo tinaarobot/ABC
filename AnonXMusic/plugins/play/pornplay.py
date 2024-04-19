@@ -1,4 +1,3 @@
-
 from pyrogram import filters
 import requests, random
 from bs4 import BeautifulSoup
@@ -7,16 +6,18 @@ import pytgcalls
 import os, yt_dlp 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pytgcalls.types import AudioVideoPiped
+from AnonXMusic.plugins.play import play
+from AnonXMusic.plugins.play.pornplay import play
 
-####
-
+#####
 
 keyboard = InlineKeyboardMarkup([
         [
-            InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data"),       
+            InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data="close_data"), 
         ]
 ])
 
+        
 ##########
 
 @app.on_callback_query(filters.regex("^close_data"))
@@ -24,7 +25,26 @@ async def close_callback(_, query):
     chat_id = query.message.chat.id
     await query.message.delete()
 
-##
+async def get_video_stream(link):
+    ydl_opts = {
+        "format": "bestvideo+bestaudio/best",
+        "outtmpl": "downloads/%(id)s.%(ext)s",
+        "geo_bypass": True,
+        "nocheckcertificate": True,
+        "quiet": True,
+        "no_warnings": True,
+    }
+    x = yt_dlp.YoutubeDL(ydl_opts)
+    info = x.extract_info(link, False)
+    video = os.path.join(
+        "downloads", f"{info['id']}.{info['ext']}"
+    )
+    if os.path.exists(video):
+        return video
+    x.download([link])
+    return video
+        
+#####
 
 def get_video_info(title):
     url_base = f'https://www.xnxx.com/search/{title}'
@@ -48,7 +68,7 @@ def get_video_info(title):
 
 
 
-@app.on_message(filters.command("xporn"))
+@app.on_message(filters.command("porn"))
 async def get_random_video_info(client, message):
     if len(message.command) == 1:
         await message.reply("Please provide a title to search.")
@@ -66,3 +86,6 @@ async def get_random_video_info(client, message):
         await message.reply(f"No video link found for '{title}'.")
 
 ######
+
+
+
