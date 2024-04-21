@@ -25,3 +25,15 @@
  <img src="https://readme-typing-svg.herokuapp.com?color=FFFF00&width=420&lines=🐉+🄹🄾🄸🄽+🄾🅄🅁+🅂🅄🄿🄿🄾🅁🅃+🄶🅁🄾🅄🄿+🐉">
 
 
+─「 ᴍᴜsɪᴄ ʙᴏᴛ ʜᴇʟᴘ ᴄᴏᴍᴍᴀɴᴅs 」─
+</h3>
+
+```
+❖ ʙᴏᴛ ᴄᴏɴᴛʀᴏʟ ᴄᴏᴍᴍᴀɴᴅs ⏤͟͟͞͞★
+
+● /mstart ➥ ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀʀᴛ.
+● /mhelp ➥ ᴍᴜsɪᴄ ʙᴏᴛ ʜᴇʟᴘ.
+● /mstats ➥ ᴍᴜsɪᴄ ʙᴏᴛ sᴛᴀᴛs.
+● /mping ➥ ᴍᴜsɪᴄ ʙᴏᴛ ᴘɪɴɢ.
+● /msettings ➥ ᴍᴜsɪᴄ ʙᴏᴛ sᴇᴛᴛɪɴɢs.
+```
