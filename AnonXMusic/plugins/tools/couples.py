@@ -88,11 +88,11 @@ async def ctest(_, message):
 
          mask = Image.new('L', img1.size, 0)
          draw = ImageDraw.Draw(mask) 
-         draw.ellipse((0, 0) + img1.size, fill=255)
+         draw.ellipse((0, 0) + img1.size, fill=355)
 
          mask1 = Image.new('L', img2.size, 0)
          draw = ImageDraw.Draw(mask1) 
-         draw.ellipse((0, 0) + img2.size, fill=255)
+         draw.ellipse((0, 0) + img2.size, fill=355)
 
 
          img1.putalpha(mask)
@@ -100,8 +100,8 @@ async def ctest(_, message):
 
          draw = ImageDraw.Draw(img)
 
-         img.paste(img1, (101, 225), img1)
-         img.paste(img2, (815, 225), img2)
+         img.paste(img1, (150, 255), img1)
+         img.paste(img2, (850, 255), img2)
 
          img.save(f'test_{cid}.png')
     
