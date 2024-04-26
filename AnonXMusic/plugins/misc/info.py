@@ -37,7 +37,7 @@ async def get_userinfo_img(
         img = Image.open(profile_path)
         mask = Image.new("L", img.size, 0)
         draw = ImageDraw.Draw(mask)
-        draw.pieslice([(0, 0), img.size], 0, 360, fill=255)
+        draw.pieslice([(0, 0), img.size], 0, 310, fill=205)
 
         circular_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
         circular_img.paste(img, (0, 0), mask)
@@ -65,13 +65,13 @@ font_path = "AnonXMusic/assets/hiroko.ttf"
 INFO_TEXT = """
 ㅤ✦ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦
   
-● ᴜsᴇʀ ɪᴅ ➥ `{}`
-● ᴜsᴇʀɴᴀᴍᴇ ➥ `@{}`
-● ᴍᴇɴᴛɪᴏɴ ➥ `{}`
-● ᴜsᴇʀ sᴛᴀᴛᴜs ➥ `{}`
-● ᴜsᴇʀ ᴅᴄ ɪᴅ ➥ `{}`
+● ᴜsᴇʀ ɪᴅ ➥ {}
+● ᴜsᴇʀɴᴀᴍᴇ ➥ @{}
+● ᴍᴇɴᴛɪᴏɴ ➥ {}
+● ᴜsᴇʀ sᴛᴀᴛᴜs ➥ {}
+● ᴜsᴇʀ ᴅᴄ ɪᴅ ➥ {}
 
-❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐
 """
 
 # --------------------------------------------------------------------------------- #
@@ -96,7 +96,7 @@ async def userstatus(user_id):
 
 # --------------------------------------------------------------------------------- #
 
-@app.on_message(filters.command(["info", "information", "userinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
+@app.on_message(filters.command(["xinfo", "xinformation", "xuserinfo"], prefixes=["/", "!", "%", ",", "", ".", "@", "#"]))
 async def userinfo(_, message):
     chat_id = message.chat.id
     user_id = message.from_user.id
