@@ -25,3 +25,6 @@ youtube-search
 youtube-search-python
 pornhub-api==0.3.0
 openai==1.23.6
+telegraph
+pickledb
+async_pymongo
