@@ -83,8 +83,8 @@ async def ctest(_, message):
 
          img = Image.open("AnonXMusic/assets/COUPLES2.PNG")
 
-         img1 = img1.resize((410, 410))
-         img2 = img2.resize((510, 510))
+         img1 = img1.resize((550, 550))
+         img2 = img2.resize((550, 550))
 
          mask = Image.new('L', img1.size, 0)
          draw = ImageDraw.Draw(mask) 
