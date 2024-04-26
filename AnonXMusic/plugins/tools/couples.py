@@ -41,7 +41,7 @@ def dt_tom():
 tomorrow = str(dt_tom())
 today = str(dt()[0])
 
-@app.on_message(filters.command("couples"))
+@app.on_message(filters.command("xcouples"))
 async def ctest(_, message):
     cid = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -83,8 +83,8 @@ async def ctest(_, message):
 
          img = Image.open("AnonXMusic/assets/COUPLES2.PNG")
 
-         img1 = img1.resize((390, 390))
-         img2 = img2.resize((390,390))
+         img1 = img1.resize((410, 410))
+         img2 = img2.resize((410, 410))
 
          mask = Image.new('L', img1.size, 0)
          draw = ImageDraw.Draw(mask) 
@@ -100,8 +100,8 @@ async def ctest(_, message):
 
          draw = ImageDraw.Draw(img)
 
-         img.paste(img1, (91, 215), img1)
-         img.paste(img2, (805, 215), img2)
+         img.paste(img1, (101, 225), img1)
+         img.paste(img2, (815, 225), img2)
 
          img.save(f'test_{cid}.png')
     
