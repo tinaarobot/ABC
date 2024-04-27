@@ -42,7 +42,7 @@ async def get_userinfo_img(
         circular_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
         circular_img.paste(img, (0, 0), mask)
         resized = circular_img.resize((355, 355))
-        bg.paste(resized, (550, 75), resized)
+        bg.paste(resized, (540, 70), resized)
 
     img_draw = ImageDraw.Draw(bg)
 
@@ -63,7 +63,8 @@ font_path = "AnonXMusic/assets/hiroko.ttf"
 
 
 INFO_TEXT = """
-ㅤ✦ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦
+ㅤ   ◦•●◉✿ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ  ✿◉●•◦
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
   
 ● ᴜsᴇʀ ɪᴅ ➥ {}
 ● ᴜsᴇʀɴᴀᴍᴇ ➥ @{}
@@ -71,7 +72,8 @@ INFO_TEXT = """
 ● ᴜsᴇʀ sᴛᴀᴛᴜs ➥ {}
 ● ᴜsᴇʀ ᴅᴄ ɪᴅ ➥ {}
 
-❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
 """
 
 # --------------------------------------------------------------------------------- #
