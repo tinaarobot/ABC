@@ -8,7 +8,7 @@ from AnonXMusic import LOGGER
 from pyrogram.types import Message
 from AnonXMusic.misc import SUDOERS
 from AnonXMusic import app
-from AnonXMusic.CutDb.Weldb import *
+from AnonXMusic.CuteDb.Weldb import *
 from config import LOGGER_ID
 
 LOGGER = getLogger(__name__)
