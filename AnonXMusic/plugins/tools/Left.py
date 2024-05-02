@@ -35,12 +35,12 @@ async def get_userinfo_img(
         img = Image.open(profile_path)
         mask = Image.new("L", img.size, 0)
         draw = ImageDraw.Draw(mask)
-        draw.pieslice([(0, 0), img.size], 0, 360, fill=255)
+        draw.pieslice([(0, 0), img.size], 0, 320, fill=225)
 
         circular_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
         circular_img.paste(img, (0, 0), mask)
         resized = circular_img.resize((286, 286))
-        bg.paste(resized, (297, 117), resized)
+        bg.paste(resized, (264, 98), resized)
 
 
     img_draw = ImageDraw.Draw(bg)
@@ -91,7 +91,7 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
                 profile_path=photo,
             )
 
-            caption = f"**ㅤㅤ  ㅤ◦•●◉✿ ᴜsᴇʀ ʟᴇғᴛ ✿◉●•◦\n▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰\n\n❖ ᴀ ᴍᴇᴍʙᴇʀ ʟᴇғᴛ ғʀᴏᴍ ɢʀᴏᴜᴘ.\n\n● ɢʀᴏᴜᴘ ➥ `{member.chat.title}`\n● ᴜsᴇʀ ɴᴀᴍᴇ ➥ `{user.mention}`\n● sᴇᴇ ʏᴏᴜ sᴏᴏɴ ᴀɢᴀɪɴ, ʙᴀʙʏ.\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐](https://t.me/avishaxbot)**\n▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰"
+            caption = f"ㅤㅤ  ㅤ◦•●◉✿ ᴜsᴇʀ ʟᴇғᴛ ✿◉●•◦\n▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰\n\n❖ ᴀ ᴍᴇᴍʙᴇʀ ʟᴇғᴛ ғʀᴏᴍ ɢʀᴏᴜᴘ.\n\n● ɢʀᴏᴜᴘ ➥ {member.chat.title}\n● ᴜsᴇʀ ɴᴀᴍᴇ ➥ {user.mention}\n● sᴇᴇ ʏᴏᴜ sᴏᴏɴ ᴀɢᴀɪɴ, ʙᴀʙʏ.\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ᴀ ᴠ ɪ s ʜ ᴀ ࿐\n▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰"
             
             # Send the message with the photo, caption, and button
             await client.send_photo(
@@ -104,5 +104,5 @@ async def member_has_left(client: app, member: ChatMemberUpdated):
             return
     else:
         # Handle the case where the user has no profile photo
-        print(f"❖ User {user.id} has no profile photo.")
+        print(f"❖ ᴜsᴇʀ {user.id} ʜᴀs ɴᴏ ᴘʀᴏғɪʟᴇ ᴘʜᴏᴛᴏ.")
           
