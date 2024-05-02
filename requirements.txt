@@ -28,3 +28,4 @@ openai==1.23.6
 telegraph
 async_pymongo
 gpytranslate
+search_engine_parser
