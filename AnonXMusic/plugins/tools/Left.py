@@ -35,11 +35,11 @@ async def get_userinfo_img(
         img = Image.open(profile_path)
         mask = Image.new("L", img.size, 0)
         draw = ImageDraw.Draw(mask)
-        draw.pieslice([(0, 0), img.size], 0, 368, fill=245)
+        draw.pieslice([(0, 0), img.size], 0, 368, fill=255)
 
         circular_img = Image.new("RGBA", img.size, (0, 0, 0, 0))
         circular_img.paste(img, (0, 0), mask)
-        resized = circular_img.resize((286, 286))
+        resized = circular_img.resize((280, 280))
         bg.paste(resized, (240, 157), resized)
 
 
