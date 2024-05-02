@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from gtts import gTTS
-from DAXXMUSIC import app
+from AnonXMusic import app
 
 
 @app.on_message(filters.command('ttss'))
