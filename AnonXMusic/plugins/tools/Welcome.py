@@ -38,15 +38,15 @@ def welcomepic(pic, user, chat, id, uname):
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp)
     pfp = pfp.resize(
-        (600, 600)
+        (620, 620)
     ) 
     draw = ImageDraw.Draw(background)
     font = ImageFont.truetype('AnonXMusic/assets/font.ttf', size=65)
     font2 = ImageFont.truetype('AnonXMusic/assets/font.ttf', size=90)
-    draw.text((170, 350), f'NAME : {unidecode(user)}', fill="black", font=font)
-    draw.text((170, 450), f'ID : {id}', fill="black", font=font)
-    draw.text((170, 550), f"USERNAME : {uname}", fill="black",font=font)
-    pfp_position = (1200, 150)  
+    draw.text((150, 450), f'NAME : {unidecode(user)}', fill="black", font=font)
+    draw.text((150, 550), f'ID : {id}', fill="black", font=font)
+    draw.text((150, 650), f"USERNAME : {uname}", fill="black",font=font)
+    pfp_position = (1100, 160)  
     background.paste(pfp, pfp_position, pfp)  
     background.save(
         f"downloads/welcome#{id}.png"
