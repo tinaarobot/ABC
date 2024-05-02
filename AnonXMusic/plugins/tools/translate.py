@@ -9,7 +9,7 @@ trans = Translator()
 
 #......
 
-@app.on_message(filters.command("tr"))
+@app.on_message(filters.command("trr"))
 async def translate(_, message) -> None:
     reply_msg = message.reply_to_message
     if not reply_msg:
