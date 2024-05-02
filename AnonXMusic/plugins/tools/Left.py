@@ -52,8 +52,8 @@ async def get_userinfo_img(
 
 # --------------------------------------------------------------------------------- #
 
-bg_path = "MukeshRobot/Love/CUTELEF.jpg"
-font_path = "MukeshRobot/Love/SwanseaBold-D0ox.ttf"
+bg_path = "AnonXMusic/assets/CUTELEF.jpg"
+font_path = "AnonXMusic/assets/SwanseaBold-D0ox.ttf"
 
 # --------------------------------------------------------------------------------- #
 
