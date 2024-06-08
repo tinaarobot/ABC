@@ -64,8 +64,8 @@ def btn(text, value, type="callback_data"):
 async def search_(app: app, msg: Message):
     split = msg.text.split(None, 1)
     if len(split) == 1:
-        return await msg.reply_text("**ɢɪᴠᴇ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ**")
-    to_del = await msg.reply_text("**sᴇᴀʀᴄʜɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ...**")
+        return await msg.reply_text("⬤ ɢɪᴠᴇ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ.")
+    to_del = await msg.reply_text("🔍")
     query = split[1]
     try:
         result = await gsearch.async_search(query)
@@ -109,21 +109,21 @@ async def search_(app: app, msg: Message):
             ]
         )
 
-        txt = f"**ʜᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ʀᴇsᴜʟᴛs ᴏғ ʀǫᴜᴇsᴛᴇᴅ : {query.title()}**"
+        txt = f"⬤ ʜᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ʀᴇsᴜʟᴛs ᴏғ ʀǫᴜᴇsᴛᴇᴅ ➥ {query.title()}"
         await to_del.delete()
         await msg.reply_text(txt, reply_markup=keyboard)
         return
     except NoResultsFound:
         await to_del.delete()
-        await msg.reply_text("**ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴄᴏʀʀᴇsᴘᴏɴᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇʀʏ**")
+        await msg.reply_text("⬤ ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴄᴏʀʀᴇsᴘᴏɴᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇʀʏ.")
         return
     except NoResultsOrTrafficError:
         await to_del.delete()
-        await msg.reply_text("****ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴅᴜᴇ ᴛᴏ ᴛᴏᴏ ᴍᴀɴʏ ᴛʀᴀғғɪᴄ**")
+        await msg.reply_text("⬤ ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴅᴜᴇ ᴛᴏ ᴛᴏᴏ ᴍᴀɴʏ ᴛʀᴀғғɪᴄ.")
         return
     except Exception as e:
         await to_del.delete()
-        await msg.reply_text(f"**sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ :\nʀᴇᴘᴏʀᴛ ᴀᴛ ɪᴛ** @iam_daxx")
+        await msg.reply_text(f"⬤ sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ ➥ ʀᴇᴘᴏʀᴛ ᴀᴛ ɪᴛ.")
         print(f"error : {e}")
         return
 
@@ -133,8 +133,8 @@ async def search_(app: app, msg: Message):
 async def stack_search_(app: app, msg: Message):
     split = msg.text.split(None, 1)
     if len(split) == 1:
-        return await msg.reply_text("**ɢɪᴠᴇ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ**")
-    to_del = await msg.reply_text("**sᴇᴀʀᴄʜɪɴɢ ᴏɴ ɢᴏᴏɢʟᴇ...**")
+        return await msg.reply_text("⬤ ɢɪᴠᴇ ǫᴜᴇʀʏ ᴛᴏ sᴇᴀʀᴄʜ.")
+    to_del = await msg.reply_text("🔍")
     query = split[1]
     try:
         result = await stsearch.async_search(query)
@@ -178,24 +178,20 @@ async def stack_search_(app: app, msg: Message):
             ]
         )
 
-        txt = f"**ʜᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ʀᴇsᴜʟᴛs ᴏғ ʀǫᴜᴇsᴛᴇᴅ : {query.title()}**"
+        txt = f"⬤ ʜᴇʀᴇ ᴀʀᴇ ᴛʜᴇ ʀᴇsᴜʟᴛs ᴏғ ʀǫᴜᴇsᴛᴇᴅ ➥ {query.title()}"
         await to_del.delete()
         await msg.reply_text(txt, reply_markup=keyboard)
         return
     except NoResultsFound:
         await to_del.delete()
-        await msg.reply_text("**ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴄᴏʀʀᴇsᴘᴏɴᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇʀʏ**")
+        await msg.reply_text("⬤ ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴄᴏʀʀᴇsᴘᴏɴᴅɪɴɢ ᴛᴏ ʏᴏᴜʀ ǫᴜᴇʀʏ.")
         return
     except NoResultsOrTrafficError:
         await to_del.delete()
-        await msg.reply_text("****ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴅᴜᴇ ᴛᴏ ᴛᴏᴏ ᴍᴀɴʏ ᴛʀᴀғғɪᴄ**")
+        await msg.reply_text("⬤ ɴᴏ ʀᴇsᴜʟᴛ ғᴏᴜɴᴅ ᴅᴜᴇ ᴛᴏ ᴛᴏᴏ ᴍᴀɴʏ ᴛʀᴀғғɪᴄ.")
         return
     except Exception as e:
         await to_del.delete()
-        await msg.reply_text(f"**sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ :\nʀᴇᴘᴏʀᴛ ᴀᴛ ɪᴛ** @DevsOops")
-        print(f"error : {e}")
+        await msg.reply_text(f"⬤ sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ ➥ ʀᴇᴘᴏʀᴛ ᴀᴛ ɪᴛ.")
+        print(f"⬤ error ➥ {e}")
         return
-
-
-
-
